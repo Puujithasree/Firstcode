@@ -1,0 +1,99 @@
+"use strict";
+exports.__esModule = true;
+var message = 'Hello ';
+console.log(message);
+var x = 10;
+var y = 20;
+var sum;
+var title = 'fasf';
+var isbegginer = true;
+var total = 0;
+var name = 'sdf';
+var sentence = "my name is " + name + "\ni am begginer in ts";
+console.log(sentence);
+var n = null;
+var u = undefined;
+var isnew = null;
+var myname = undefined;
+var list1 = [1, 2, 3];
+var list2 = [1, 2, 3, 4];
+var person1 = ['wrrew', 35];
+var color;
+(function (color) {
+    color[color["red"] = 4] = "red";
+    color[color["blue"] = 5] = "blue";
+    color[color["green"] = 6] = "green";
+})(color || (color = {}));
+;
+var c = color.green;
+console.log(c);
+var randomval = 10;
+randomval = 'gdg';
+randomval = true;
+var myvar = 10;
+function hasName(obj) {
+    return !!obj &&
+        typeof obj === "object" &&
+        "name" in obj;
+}
+if (hasName(myvar)) {
+    console.log(myvar.name);
+}
+var a;
+a = 19;
+a = true;
+var multitype;
+multitype = 10;
+multitype = true;
+//normal function
+function add(num1, num2) {
+    return num1 + num2;
+}
+add(5, 10);
+//function with optional parameters
+function add1(num1, num2) {
+    if (num2)
+        return num1 + num2;
+    else
+        return num1 + num2;
+}
+add(5, 10);
+add1(5);
+//default parameters 
+function add2(num1, num2) {
+    if (num2 === void 0) { num2 = 10; }
+    if (num2)
+        return num1 + num2;
+    else
+        return num1 + num2;
+}
+// normal functions using objects
+function fullname(person) {
+    console.log(person.firstname + " " + person.lastname);
+}
+var p = {
+    firstname: 'shane',
+    lastname: 'warne'
+};
+fullname(p);
+function fullname1(person1) {
+    console.log(person1.fn + " " + person1.ln);
+}
+var p1 = {
+    fn: 'shane',
+    ln: 'warne'
+};
+fullname1(p1);
+//classes
+var Employee = /** @class */ (function () {
+    function Employee(name) {
+        this.empname = name;
+    }
+    Employee.prototype.greet = function () {
+        console.log("good morning " + this.empname);
+    };
+    return Employee;
+}());
+var emp1 = new Employee('john');
+console.log(emp1.empname);
+emp1.greet();

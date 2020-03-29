@@ -1,0 +1,112 @@
+export{}
+let message = 'Hello ';
+console.log(message);
+
+
+let x=10;
+const y=20;
+
+let sum;
+const title='fasf';
+
+let isbegginer: boolean=true;
+let total:number=0;
+let name:string='sdf';
+let sentence : string= `my name is ${name}
+i am begginer in ts`;
+console.log(sentence);
+// null and undefined data types
+let isnew:boolean=null;
+let myname:string=undefined;
+//array
+let list1: number[]=[1,2,3];
+let list2:Array<number>=[1,2,3,4];
+// tuple
+let person1:[string,number]=['wrrew',35];
+
+enum color { red=4,blue,green};
+let c: color =color.green;
+console.log(c);
+
+let randomval: any=10;
+randomval='gdg';
+randomval=true;
+
+
+let myvar:unknown =10;
+function hasName(obj: any):obj is {name:string}{
+    return !!obj &&
+    typeof obj==="object" &&
+    "name" in obj
+}
+if(hasName(myvar))
+{console.log(myvar.name);
+}
+// type interface
+let a;
+a=19;
+a=true;
+// multiply data types using union 
+let multitype: number | boolean;
+multitype=10;
+multitype=true;
+//normal function
+function add(num1: number,num2: number): number{
+    return num1+num2;
+}
+add(5,10);
+//function with optional parameters
+
+function add1(num1: number,num2?: number): number{
+    if(num2)
+    return num1+num2;
+    else
+    return num1+num2;
+}
+add(5,10);
+add1(5);
+//default parameters 
+function add2(num1: number,num2: number=10): number{
+    if(num2)
+    return num1+num2;
+    else
+    return num1+num2;
+}
+// normal functions using objects
+function fullname(person:{firstname: string, lastname: string})
+{
+console.log(`${person.firstname} ${person.lastname}`);
+}
+let p={
+    firstname:'shane',
+    lastname:'warne'
+};
+fullname(p);
+//interfaces
+interface Person1{
+    fn: string;
+    ln:string;
+}
+function fullname1(person1: Person1)
+{
+console.log(`${person1.fn} ${person1.ln}`);
+}
+let p1={
+    fn:'shane',
+    ln:'warne'
+};
+fullname1(p1);
+//classes
+class Employee{
+    empname: string;
+    constructor(name:string){
+        this.empname=name;
+    }
+    greet(){
+        console.log(`good morning ${this.empname}`);
+    }
+}
+
+let emp1=new Employee('john');
+console.log(emp1.empname);
+emp1.greet();
